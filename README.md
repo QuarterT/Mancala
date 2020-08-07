@@ -1,0 +1,2 @@
+# FavoriteOfWife
+Mancala game
