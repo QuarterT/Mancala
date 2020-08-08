@@ -1,11 +1,20 @@
 # FavoriteOfWife
 Mancala game
+Game Title: Mancala - The Wife's Favorite
+The name mancala actually references a family of two player turn based strategy games. They are played with small items like seeds, beans or stones as the player pieces. The board has two to four rows of places (usally holes in the game board), and the goal is either capture the most items or prevent the other player from playing. In this version of Mancala, we are going to stick to two rows of holes to move the items in with the goal of capturing more items than our opponent.
+
+I chose to make this game because it is a favorite game of my wife and I.
+
+Lanuages used: HTML, CSS, JS 
+
+
+
 Copied requirements for reference
-<Your game's title>: A description of your game. Background info of the game is a nice touch.
+√<Your game's title>: A description of your game. Background info of the game is a nice touch.
 
 ☐ Screenshot(s): Images of your actual game.
 
-☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
+√☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
 
 ☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
 
