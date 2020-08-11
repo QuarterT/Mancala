@@ -90,90 +90,11 @@ function p1P5 (){
                 store1 = store1 + board[6];
             } else board[5]++;
         }
-        if (board[1] === 3) {
-            board[2]++;
-            board[3]++;
-        if (board[4] = 0){
-            store1 = store1 + board[7];
-            } else board[4]++;
-        }
-        if (board[1] === 2) {
-        board[2]++;
-        if (board[3] = 0){
-            store1 = store1 + board[8];
-        } else board[3]++;
-        }
-        if (board[2] ===1) {
-            board[1]++;
-        }    
-        if (board[2] = 0){
-            store1 = store1 + board[9];
-        } else board[2]++;
-    }
-        if (board[0] === 1) {
-            if (board[1] = 0){
-                store1 = store1 + board[10];
-            } else board[2]++;
-    }   
-    }
-    else if (board[1] > 5) {
-    pit5_5;
-    if (board[1] === 6){
-        board[7]++;
-    }
-    if (board[1] === 7) {
-        board[7]++;
-        board[8]++;
-    }
-    else if (board[1] === 8) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    }
-    else if (board[1] === 9) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    }
-    else if (board[1] === 10) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-        board[11]++;
-    }
-    else if (board[1] === 11) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        board[0]++;
-    }  
-    }   
-    else if (board[1] === 5) {
-        pit5_5();
-        p1P5();
-    }   
-    else (board[1] === 0);
-     alert("select different pit, this one is empty");
-board[1] = 0;     
-turn++;
-};
-function p1P5 (){
-    if (board[1] < 5){
-        if (board[1] === 4) {
-            pit5_3();
-            if (board[5] = 0){
-                store1 = store1 + board[6];
-            } else board[5]++;
-        }
         else if (board[1] === 3) {
             board[2]++;
             board[3]++;
             if (board[4] = 0){
-            store1 = store1 + board[7];
+                store1 = store1 + board[7];
             } else board[4]++;
         }
         else if (board[1] === 2) {
@@ -182,16 +103,13 @@ function p1P5 (){
                 store1 = store1 + board[8];
             } else board[3]++;
         }
-        else (board[1] === 1) {
+        else (board[1] ===1);    
             if (board[2] = 0){
-            store1 = store1 + board[9];
-            } else {
-                board[2]++;
-            }
-        }
-    }    
+               store1 = store1 + board[9];
+            } else board[2]++;
+    }   
     else if (board[1] > 5) {
-         pit5_5;
+        pit5_5;
         if (board[1] === 6){
             board[7]++;
         }
@@ -217,21 +135,22 @@ function p1P5 (){
             board[10]++;
             board[11]++;
         }
-        else (board[1] === 11) {
+        else (board[1] === 11) 
             board[7]++;
             board[8]++;
             board[9]++;
             board[10]++;
             board[11]++;
             board[0]++;
-        }  
+          
     }   
     else if (board[1] === 5) {
         pit5_5();
         p1P5();
     }   
-    else (board[1] === 0);
-     alert("select different pit, this one is empty");
+    else if (board[1] === 0) {
+        alert("select different pit, this one is empty");
+    }    
     board[1] = 0;     
     turn++;
 };
@@ -244,6 +163,7 @@ function pit5_5() {
     pit5_3;
     board[5]++
     store++;
+}    
 function pit6_4(){
     board[1]++;
     board[2]++;
