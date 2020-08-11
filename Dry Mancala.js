@@ -94,3 +94,6 @@ function pit6_6() {
     board[5]++
     store++;
 }
+
+
+//document.querySelector(#pit6).addEventListener('click', p1P6());
