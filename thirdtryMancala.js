@@ -19,9 +19,9 @@ click event =board[?]
 beansInHand = board[?]
 */
 function moveTheBeans() {
-    firstDrop = chosen ++;
+    firstDrop = chosen++;
     while (beansInHand > 0){
-        board(firstDrop)++;
+        board[firstDrop]++;
         firstDrop++;
         beansInHand--; 
     }
