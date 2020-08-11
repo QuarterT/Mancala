@@ -26,3 +26,5 @@ function moveTheBeans() {
         beansInHand--; 
     }
 }
+function getIdx()
+    
