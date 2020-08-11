@@ -1,4 +1,5 @@
 //dryer attempt
+let turn = 1;
 let store1 = 0;
 let store2 = 0;
 let board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
@@ -10,7 +11,7 @@ p1P3 = board[3]; p2P4 = board[8];
 p1P2 = board[4]; p2P5 = board[7];
 p1P1 = board[5]; p2P6 = board[6];
 */
-function p1P1 (){
+function p1P6 (){
     if (board[0] < 6){
     if (board[0] === 5) {
         pit6_4();
@@ -75,10 +76,11 @@ function p1P1 (){
     }   
     else if (board[0] === 6) {
         pit6_6();
+        p1P6();
     }   
-    else (board[0]= 0) {
-        
-    }
+    else (board[0] === 0);
+     alert("select different pit, this one is empty");
+turn++;
 };
 
 function pit6_4(){
@@ -87,7 +89,7 @@ function pit6_4(){
     board[3]++;
     board[4]++;
 }
-function pit6_6 {
+function pit6_6() {
     pit6_4;
     board[5]++
     store++;

@@ -14,10 +14,10 @@ p1P3 = board[3]; p2P4 = board[9];
 p1P2 = board[4]; p2P5 = board[8];
 p1P1 = board[5]; p2P6 = board[7];
 store1 = board[6]
-*/
+
 click event =board[?]
 beansInHand = board[?]
-
+*/
 function moveTheBeans() {
     firstDrop = chosen ++;
     while (beansInHand > 0){
