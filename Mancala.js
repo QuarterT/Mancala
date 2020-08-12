@@ -1,72 +1,55 @@
-function p1P5 (){
-    if (board[1] < 5){
-        if (board[1] === 4) {
-            pit5_3();
-            if (board[5] = 0){
-                store1 = store1 + board[6];
-            } else board[5]++;
+//need a capture function that checks if enemy pit is empty and adds if not
+function p1P4 () {
+    if (board[2] < 4){
+        if (board[2] === 3) {
+            pit4_2();
+            sdgagaergsedrhdhs
         }
-        if (board[1] === 3) {
-            board[2]++;
+        else if (board[2] === 2) {
             board[3]++;
-        if (board[4] = 0){
+            if (board[4] === 0){
             store1 = store1 + board[7];
             } else board[4]++;
         }
-        if (board[1] === 2) {
-        board[2]++;
-        if (board[3] = 0){
-            store1 = store1 + board[8];
-        } else board[3]++;
-        }
-        if (board[2] ===1) {
-            board[1]++;
-        }    
-        if (board[2] = 0){
-            store1 = store1 + board[9];
-        } else board[2]++;
-    }
-        if (board[0] === 1) {
-            if (board[1] = 0){
-                store1 = store1 + board[10];
-            } else board[2]++;
-    }   
-    }
+        else (board[2] === 1);
+            if (board[3] === 0){
+                store1 = store1 + board[8];
+            } else board[3]++;
+    }    
     else if (board[1] > 5) {
-    pit5_5;
-    if (board[1] === 6){
-        board[7]++;
-    }
-    if (board[1] === 7) {
-        board[7]++;
-        board[8]++;
-    }
-    else if (board[1] === 8) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    }
-    else if (board[1] === 9) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    }
-    else if (board[1] === 10) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-        board[11]++;
-    }
-    else if (board[1] === 11) {
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        board[0]++;
-    }  
+         pit5_5;
+        if (board[1] === 6){
+            board[7]++;
+        }
+        else if (board[1] === 7) {
+            board[7]++;
+            board[8]++;
+        }
+        else if (board[1] === 8) {
+            board[7]++;
+            board[8]++;
+            board[9]++;
+        }
+        else if (board[1] === 9) {
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+        }
+        else if (board[1] === 10) {
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+        }
+        else (board[1] === 11);
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            board[0]++;
     }   
     else if (board[1] === 5) {
         pit5_5();
@@ -74,17 +57,16 @@ function p1P5 (){
     }   
     else (board[1] === 0);
      alert("select different pit, this one is empty");
-board[1] = 0;     
-turn++;
+    board[1] = 0;     
+    turn++;
 };
 
-function pit5_3(){
-    board[2]++;
+function pit4_2(){
     board[3]++;
     board[4]++;
 }
-function pit5_5() {
-    pit5_3;
+function pit4_4() {
+    pit4_2()
     board[5]++
     store++;
 
@@ -192,7 +174,64 @@ let turn = 0;
 p1P6 = []; 
 //call player 2 listening function   
 		}
-
-
-
-
+}
+function pit1Capture(){
+    if ((board[0] === 0) && (board[11] !== 0)) {
+        store1 = 1 + store1 + board[11];
+    } else board[0]++;
+}
+function pit2Capture(){
+    if ((board[1] === 0) && (board[10] !== 0)) {
+        store1 = 1 + store1 + board[10];
+    } else board[1]++;
+}
+function pit3Capture(){
+    if ((board[2] === 0) && (board[9] !== 0)) {
+        store1 = 1 + store1 + board[9];
+    } else board[2]++;
+}
+function pit4Capture(){
+    if ((board[3] === 0) && (board[8] !== 0)) {
+        store1 = 1 + store1 + board[8];
+    } else board[3]++;
+}
+function pit5Capture(){
+    if ((board[4] === 0) && (board[7] !== 0)) {
+        store1 = 1 + store1 + board[7];
+    } else board[4]++;
+}
+function pit6Capture(){
+    if ((board[5] === 0) && (board[6] !== 0)) {
+        store1 = 1 + store1 + board[6];
+    } else board[5]++;
+}
+function pit7Capture(){
+    if ((board[6] === 0) && (board[5] !== 0)) {
+        store1 = 1 + store1 + board[5];
+    } else board[6]++;
+}
+function pit8Capture(){
+    if ((board[7] === 0) && (board[4] !== 0)) {
+        store1 = 1 + store1 + board[4];
+    } else board[7]++;
+}
+function pit9Capture(){
+    if ((board[8] === 0) && (board[3] !== 0)) {
+        store1 = 1 + store1 + board[3];
+    } else board[3]++;
+}
+function pit10Capture(){
+    if ((board[9] === 0) && (board[2] !== 0)) {
+        store1 = 1 + store1 + board[2];
+    } else board[9]++;
+}
+function pit11Capture(){
+    if ((board[10] === 0) && (board[1] !== 0)) {
+        store1 = 1 + store1 + board[1];
+    } else board[10]++;
+}
+function pit12Capture(){
+    if ((board[11] === 0) && (board[0] !== 0)) {
+        store1 = 1 + store1 + board[0];
+    } else board[11]++;
+}
