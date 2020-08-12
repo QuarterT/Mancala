@@ -1,22 +1,29 @@
 # FavoriteOfWife
 Mancala game
-Game Title: Mancala - The Wife's Favorite
+Game Title: Mancala - The Wife's Favorite game
 The name mancala actually references a family of two player turn based strategy games. They are played with small items like seeds, beans or stones as the player pieces. The board has two to four rows of places (usally holes in the game board), and the goal is either capture the most items or prevent the other player from playing. In this version of Mancala, we are going to stick to two rows of holes to move the items in with the goal of capturing more items than our opponent.
 
 I chose to make this game because it is a favorite game of my wife and I.
 
 Lanuages used: HTML, CSS, JS 
 
+Getting started - 
+Link to game - [https://quartert.github.io/Mancala/](https://quartert.github.io/Mancala/) 
+Pick any pit on your side of the board. Player 1 is the left side, player 2 is the right side. 
+Goal is to achieve the most beans by any legal means.
+If your last bean of that turn falls in an empty pit, you capture any beans in your opponent's directly neighboring pit. 
+if your last bean of that turn lands in your "store", then you get to go again. 
+if you run out of beans on your side, the game ends.  
+
 
 
 Copied requirements for reference
-√<Your game's title>: A description of your game. Background info of the game is a nice touch.
+
 
 ☐ Screenshot(s): Images of your actual game.
 
-√☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
+
 
 ☐ Next Steps: Planned future enhancements (icebox items).
 
