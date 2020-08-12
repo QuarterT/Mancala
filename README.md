@@ -15,17 +15,15 @@ If your last bean of that turn falls in an empty pit, you capture any beans in y
 if your last bean of that turn lands in your "store", then you get to go again. 
 if you run out of beans on your side, the game ends.  
 
-
+#### things I would like to improve down the road
+Css - make the store images be able to have the number of beans in the center, maybe even be able to add tiny bean images that stack up on each other. or switch images as the numbers change. Would like to make the pits have similar images. Want to add an actual board image. 
+HTML - add more info, add a table to have a list of times player 1 or player 2 won. 
+JS - would like to build an AI player and have it be able to go first or second. write much DRYer code. 
 
 Copied requirements for reference
 
 
 ☐ Screenshot(s): Images of your actual game.
-
-
-
-
-☐ Next Steps: Planned future enhancements (icebox items).
 
 rubix for project 1 https://git.generalassemb.ly/SEI-CC/SEI-CC-9/blob/master/projects/project-1/project-1-code-review.pdf
 
