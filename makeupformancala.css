@@ -1,0 +1,18 @@
+body {
+	background-color: rgb(11, 183, 222);
+}
+h1,
+h3 {
+	color: white;
+}
+
+button {
+	width: 72px;
+	height: 50px;
+	margin: 5px 2px 5px 2px;
+}
+.stores {
+	display: block;
+	width: 150px;
+	height: 150px;
+}
