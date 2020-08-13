@@ -155,6 +155,33 @@ function p1P2 (){
     turn++;
 };
 //internal functions
+function endTurn();
+    if ((board[0]+board[1]+board[2]+board[3]+board[4]+board[5]) !== 0) && ((board[6]+board[7]+board[8]+board[9]+board[10]+board[11]) !== 0) {
+    turn++;
+    } else 
+        if (store1 > store2) {
+        html append child "player 1 wins)
+        } 
+        else if (store2 > store1) {
+            html append child "player 2 wins"
+            }
+            else html append child "no one wins";
+    }
+    
+function play(){
+    turn = 1;
+    store1 = 0;
+    store2 = 0;
+    board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
+}
+
+function game () {
+if ((turn % 2) !== 0){
+    player1Options();
+} 
+else player2Options()
+    
+    
 function pit5_3(){
     board[2]++;
     board[3]++;
