@@ -44,7 +44,6 @@ function endTurn() {
     } 
     else winnerIsWho();  
 } 
-
 function aroundTheBoard1() {
     board[6]++;
     board[7]++;
@@ -53,7 +52,6 @@ function aroundTheBoard1() {
     board[10]++;
     board[11]++;
 }
-
 function aroundTheBoard2(){
     board[1]++;
     board[1]++;
@@ -62,7 +60,6 @@ function aroundTheBoard2(){
     board[4]++;
     board[5]++;
 }
-
 function player1Options () {
         pit1.addEventListener("click, a");
         pit2.addEventListener("click, b");    
@@ -70,8 +67,7 @@ function player1Options () {
         pit4.addEventListener("click, d");  
         pit5.addEventListener("click, e");  
         pit6.addEventListener("click, f");  
-}
-    
+}    
 function player2Options () {
         pit6.addEventListener("click, g");  
         pit7.addEventListener("click, h");  
@@ -80,7 +76,6 @@ function player2Options () {
         pit10.addEventListener("click, k");  
         pit11.addEventListener("click, l");  
 }
-    //i know with proper variables this can be turned into one function most likely
 function pit1Capture(){
         if ((board[0] === 0) && (board[11] !== 0)) {
             store1 = 1 + store1 + board[11];
@@ -141,11 +136,26 @@ function pit12Capture(){
             store1 = 1 + store1 + board[0];
         } else board[11]++;
 }
+function visualBeanNumber() {
+    document.querySelector("#pit1").innerHTML = ${board[0]};
+    document.querySelector("#pit2").innerHTML = ${board[1]};
+    document.querySelector("#pit3").innerHTML = ${board[2]};
+    document.querySelector("#pit4").innerHTML = ${board[3]};
+    document.querySelector("#pit5").innerHTML = ${board[4]};
+    document.querySelector("#pit6").innerHTML = ${board[5]};
+    document.querySelector("#pit7").innerHTML = ${board[6]};
+    document.querySelector("#pit8").innerHTML = ${board[7]};
+    document.querySelector("#pit9").innerHTML = ${board[8]};
+    document.querySelector("#pit10").innerHTML = ${board[9]};
+    document.querySelector("#pit11").innerHTML = ${board[10]};
+    document.querySelector("#pit12").innerHTML = ${board[11]};
+} 
 function game () {
     if ((turn % 2) !== 0){
         player1Options();
     } 
     else player2Options(); 
+    visualBeanNumber();
     endTurn();    
 }  
         
