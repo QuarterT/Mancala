@@ -90,7 +90,7 @@ function aroundTheBoard2(){
     board[5]++;
 }
 
-pit1.addEventListener("click, a")    
+pit1.addEventListener("click, a");    
 function a(){    
         switch (board[0]) {
             case 0: 
