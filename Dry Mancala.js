@@ -23,176 +23,38 @@ p1P4 = board[3]; p2P9 = board[8];
 p1P5 = board[4]; p2P8 = board[7];
 p1P6 = board[5]; p2P7 = board[6];
 */
-document.querySelector("#pit1").addEventListener("click", p1P1());
-function p1P1 (){
-    if (board[0] < 6){
-        if (board[0] === 5) {
-            pit6_4();
-            pit6Capture();
-        }
-        else if (board[0] === 4) {
-            board[1]++;
-            board[2]++;
-            board[3]++;
-            pit5Capture();
-        }
-        else if (board[0] === 3) {
-        board[1]++;
-        board[2]++;
-        pit4Capture();
-        }
-        else if (board[0] === 2) {
-            board[1]++;
-            pit3Capture();
-        }
-        else if (board[0] === 1) {
-        pit2Capture();
-        }   
-    }
-    else if (board[0] > 6) {
-        pit6_6();
-        if (board[0] === 7) {
-            board[6]++;
-        }
-        else if (board[0] === 8) {
-            board[6]++;
-            board[7]++;
-        }
-        else if (board[0] === 9) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-        }
-        else if (board[0] === 10) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-        }
-        else if (board[0] === 11) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-            board[10]++;
-        }
-        else if (board[0] === 12) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-            board[10]++;
-            board[11]++;
-        }  
-    }   
-    else if (board[0] === 6) {
-        pit6_6();
-        p1P6();
-    }   
-    else if (board[0] === 0) {
-     alert("select different pit, this one is empty");
-    } 
-turn++;
-};
-function p1P2 (){
-    if (board[1] < 5){
-        if (board[1] === 4) {
-            pit5_3();
-            pit6Capture();
-        }
-        else if (board[1] === 3) {
-            board[2]++;
-            board[3]++;
-            pit5Capture();
-        }
-        else if (board[1] === 2) {
-            board[2]++;
-            pit4Capture();
-        }
-        else (board[1] ===1);    
-            pit3Capture();
-    }   
-    else if (board[1] > 5) {
-        pit5_5;
-        if (board[1] === 6){
-            board[6]++;
-        }
-        else if (board[1] === 7) {
-            board[6]++;
-            board[7]++;
-        }
-        else if (board[1] === 8) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-        }
-        else if (board[1] === 9) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-        }
-        else if (board[1] === 10) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-            board[10]++;
-        }
-        else if (board[1] === 11) { 
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-            board[10]++;
-            board[11]++;
-        }    
-        else if (board[1] === 12) {
-            board[6]++;
-            board[7]++;
-            board[8]++;
-            board[9]++;
-            board[10]++;
-            board[11]++;
-            pit1Capture;
-        }  
-    }   
-    else if (board[1] === 5) {
-        pit5_5();
-        p1P5();
-    }   
-    else if (board[1] === 0) {
-        alert("select different pit, this one is empty");
-    }    
-    board[1] = 0;     
-    turn++;
-};
+
 //internal functions
-function endTurn();
-    if ((board[0]+board[1]+board[2]+board[3]+board[4]+board[5]) !== 0) && ((board[6]+board[7]+board[8]+board[9]+board[10]+board[11]) !== 0) {
+function endTurn() {
+    if (((board[0] + board[1] + board[2] + board[3] + board[4] + board[5]) !== 0) && ((board[6] + board[7] + board[8] + board[9] + board[10] + board[11]) !== 0)) {
     turn++;
-    } else 
-        if (store1 > store2) {
+    } 
+    else winnerIsWho();  
+} 
+
+function winnerIsWho () {
+    if (store1 > store2) {
         html append child "player 1 wins)
         } 
-        else if (store2 > store1) {
+    else if (store2 > store1) {
             html append child "player 2 wins"
             }
-            else html append child "no one wins";
-    }
-    
+    else html append child "no one wins";
+}
+
+/*
 function play(){
     turn = 1;
     store1 = 0;
     store2 = 0;
     board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
 }
-
+*/
 function game () {
 if ((turn % 2) !== 0){
     player1Options();
 } 
-else player2Options()
+else player2Options();
     
     
 function pit5_3(){
