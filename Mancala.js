@@ -7,6 +7,9 @@ document.querySelector("#pit1").addEventListener("click", yo());
 */
 
 /* 
+const pit1 = document.querySelector("#pit");
+
+/*
 function p1P4 () {
     if (board[2] < 4){
         if (board[2] === 3) {
@@ -243,3 +246,4 @@ function pit12Capture(){
         store1 = 1 + store1 + board[0];
     } else board[11]++;
 }
+*/
