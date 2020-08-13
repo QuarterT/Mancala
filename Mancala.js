@@ -45,7 +45,24 @@ function endTurn() {
     else winnerIsWho();  
 } 
 
-    
+function aroundTheBoard1() {
+    board[6]++;
+    board[7]++;
+    board[8]++;
+    board[9]++;
+    board[10]++;
+    board[11]++;
+}
+
+function aroundTheBoard2(){
+    board[1]++;
+    board[1]++;
+    board[2]++;
+    board[3]++;
+    board[4]++;
+    board[5]++;
+}
+
 function player1Options () {
         pit1.addEventListener("click, a");
         pit2.addEventListener("click, b");    
