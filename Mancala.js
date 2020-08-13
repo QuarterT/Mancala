@@ -1,4 +1,12 @@
-//need a capture function that checks if enemy pit is empty and adds if not
+/* event listener template
+function yo() {
+	document.querySelector("#pit1").innerHTML = "pit1";
+}
+
+document.querySelector("#pit1").addEventListener("click", yo());
+*/
+
+/* 
 function p1P4 () {
     if (board[2] < 4){
         if (board[2] === 3) {
