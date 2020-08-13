@@ -137,18 +137,18 @@ function pit12Capture(){
         } else board[11]++;
 }
 function visualBeanNumber() {
-    document.querySelector("#pit1").innerHTML = ${board[0]};
-    document.querySelector("#pit2").innerHTML = ${board[1]};
-    document.querySelector("#pit3").innerHTML = ${board[2]};
-    document.querySelector("#pit4").innerHTML = ${board[3]};
-    document.querySelector("#pit5").innerHTML = ${board[4]};
-    document.querySelector("#pit6").innerHTML = ${board[5]};
-    document.querySelector("#pit7").innerHTML = ${board[6]};
-    document.querySelector("#pit8").innerHTML = ${board[7]};
-    document.querySelector("#pit9").innerHTML = ${board[8]};
-    document.querySelector("#pit10").innerHTML = ${board[9]};
-    document.querySelector("#pit11").innerHTML = ${board[10]};
-    document.querySelector("#pit12").innerHTML = ${board[11]};
+    document.querySelector("#pit1").innerHTML = board[0];
+    document.querySelector("#pit2").innerHTML = board[1];
+    document.querySelector("#pit3").innerHTML = board[2];
+    document.querySelector("#pit4").innerHTML = board[3];
+    document.querySelector("#pit5").innerHTML = board[4];
+    document.querySelector("#pit6").innerHTML = board[5];
+    document.querySelector("#pit7").innerHTML = board[6];
+    document.querySelector("#pit8").innerHTML = board[7];
+    document.querySelector("#pit9").innerHTML = board[8];
+    document.querySelector("#pit10").innerHTML = board[9];
+    document.querySelector("#pit11").innerHTML = board[10];
+    document.querySelector("#pit12").innerHTML = board[11];
 } 
 function game () {
     if ((turn % 2) !== 0){
