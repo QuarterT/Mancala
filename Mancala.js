@@ -1108,5 +1108,5 @@ function game () {
     visualBeanNumber();
     endTurn();    
 }  
-        
-document.querySelector("#pit1").addEventListener("click", play);        
+game();        
+document.querySelector("#replay").addEventListener("click", play);        
