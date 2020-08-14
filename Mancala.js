@@ -265,7 +265,7 @@ switch (board[1]) {
         board[3]++;
         board[4]++;
         board[5]++;
-        store++;
+        store1++;
         player1Options();
     case 6:
         board[2]++;
@@ -351,7 +351,7 @@ switch (board[2]) {
         board[3]++;
         board[4]++;
         board[5]++;
-        store++;
+        store1++;
         board[6]++;
     case 6:       
         board[3]++;      
@@ -411,152 +411,151 @@ switch (board[2]) {
 }
 }
 function d() {
-switch (board[3]) {
-    case 0: 
-        alert("please select again, nothing here");
-    case 1: 
-        pit5Capture;
-    case 2:
-        board[4]++;
-        pit6Capture();
-    case 3:
-        board[4]++;
-        board[5]++;
-        store1++;
-    case 4:
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-    case 5:
-        board[4]++;
-        board[5]++;
-        store++;
-        board[6]++;
-        board[7]++;
-    case 6:             
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-    case 7:            
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    case 8:
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    case 9:
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-    case 10:
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        pit1Capture();
-    case 11:
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        board[0]++;
-        pit2Capture();
-    case 12:
-        board[4]++;
-        board[5]++;
-        store1++
-        aroundTheBoard1();
-        board[0]++;
-        board[1]++;
-        pit3Capture();                
-
-}
+    switch (board[3]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit5Capture;
+        case 2:
+            board[4]++;
+            pit6Capture();
+        case 3:
+            board[4]++;
+            board[5]++;
+            store1++;
+        case 4:
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+        case 5:
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+        case 6:             
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+        case 7:            
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+        case 8:
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+        case 9:
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+        case 10:
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            pit1Capture();
+        case 11:
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            board[0]++;
+            pit2Capture();
+        case 12:
+            board[4]++;
+            board[5]++;
+            store1++
+            aroundTheBoard1();
+            board[0]++;
+            board[1]++;
+            pit3Capture();                
+    }
 }
 function e() {
-switch (board[4]) {
-    case 0: 
-        alert("please select again, nothing here");
-    case 1: 
-        pit6Capture;
-    case 2:
-        board[5]++;
-        store1++;
-    case 3:
-        board[5]++;
-        store1++;
-        board[6]++;
-    case 4:
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-    case 5:
-        board[5]++;
-        store++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-    case 6:             
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    case 7:                        
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    case 8:
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-    case 9:
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        pit1Capture();
-    case 10:
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        board[0]++;
-        pit2Capture();
-    case 11:
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        board[0]++;
-        board[1]++;
-        pit3Capture();
-    case 12:
-        board[5]++;
-        store1++
-        aroundTheBoard1();
-        board[0]++;
-        board[1]++;
-        board[2]++;
-        pit4Capture();                
-}
+    switch (board[4]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit6Capture;
+        case 2:
+            board[5]++;
+            store1++;
+        case 3:
+            board[5]++;
+            store1++;
+            board[6]++;
+        case 4:
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+        case 5:
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+        case 6:             
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+        case 7:                        
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+        case 8:
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+        case 9:
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            pit1Capture();
+        case 10:
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            board[0]++;
+            pit2Capture();
+        case 11:
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            board[0]++;
+            board[1]++;
+            pit3Capture();
+        case 12:
+            board[5]++;
+            store1++
+            aroundTheBoard1();
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            pit4Capture();                
+    }
 }
 function f() {
     switch (board[5]) {
@@ -577,7 +576,7 @@ function f() {
             board[7]++;
             board[8]++;
         case 5:
-            store++;
+            store1++;
             board[6]++;
             board[7]++;
             board[8]++;
@@ -621,7 +620,7 @@ function f() {
             board[1]++;
             board[2]++;
             board[3]++;
-            pit4Capture();                
+            pit5Capture();                
 }
 }
 function h(){    
@@ -798,17 +797,17 @@ function i() {
             board[9]++;
             board[10]++;
             board[11]++;
-            store2++
+            store2++;
             aroundTheBoard2();
             pit7Capture();                
 }
 }
 function j() {
     switch (board[8]) {
-        case 0: 
-            alert("please select again, nothing here");
-        case 1: 
-            pit10Capture;
+    case 0: 
+        alert("please select again, nothing here");
+    case 1: 
+        pit10Capture;
     case 2:
         board[9]++;
         pit11Capture();
@@ -872,18 +871,234 @@ function j() {
         board[9]++;
         board[10]++;
         board[11]++;
-        store1++;
+        store2++;
         aroundTheBoard2();
-        pit1Capture();
+        pit7Capture();
     case 12:
         board[9]++;
         board[10]++;
         board[11]++;
         store2++
         aroundTheBoard2();
-        board[0]++;
-        pit2Capture();                
+        board[6]++;
+        pit8Capture();                
     }
+}
+function k() {
+    switch (board[9]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit11Capture;
+        case 2:
+            board[10]++;
+            pit12Capture();
+        case 3:
+            board[10]++;
+            board[11]++;
+            store2++;
+            player2Options();
+        case 4:
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+        case 5:
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+        case 6:             
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+        case 7:            
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+        case 8:
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+            board[4]++;
+        case 9:
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+        case 10:
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            pit7Capture();
+        case 11:
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            pit8Capture();
+        case 12:
+            board[10]++;
+            board[11]++;
+            store2++
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            pit9Capture();                
+
+    }
+}
+function l() {
+    switch (board[10]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit12Capture;
+        case 2:
+            board[11]++;
+            store2++;
+            player2Options();
+        case 3:
+            board[11]++;
+            store2++;
+            board[0]++;
+        case 4:
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+        case 5:
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+        case 6:             
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+        case 7:                        
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+            board[4]++;
+        case 8:
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+        case 9:
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            pit7Capture();
+        case 10:
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            pit8Capture();
+        case 11:
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            pit9Capture();
+        case 12:
+            board[11]++;
+            store2++
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            pit10Capture();                
+    }
+}
+function m() {
+    switch (board[11]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            store2++;
+        case 2:
+            store2++;
+            board[0]++;
+        case 3:
+            store2++;
+            board[0]++;
+            board[1]++;
+        case 4:
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+        case 5:
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+        case 6:
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;             
+            board[4]++;
+        case 7:
+            store2++;
+            aroundTheBoard2();
+        case 8:
+            store2++;
+            aroundTheBoard2();
+            pit7Capture;
+        case 9:
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            pit8Capture();
+        case 10:
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            pit9Capture();
+        case 11:
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            pit10Capture();
+        case 12:
+            store2++
+            aroundTheBoard2();
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            pit11Capture();                
+}
 }
 function game () {
     if ((turn % 2) !== 0){
