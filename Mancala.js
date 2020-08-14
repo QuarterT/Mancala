@@ -29,21 +29,22 @@ function play() {
     store2 = 0;
     board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
 }
-function winnerIsWho () {
+function winnerIsWho() {
     if (store1 > store2) {
-        h3.insertAdjacentHTML(afterEnd,"Player 1 Wins");
-        } 
-    else if (store2 > store1) {
-        h3.insertAdjacentHTML(afterEnd,"Player 2 Wins");
-            }
-    else h3.insertAdjacentHTML(afterEnd,"No one Wins");
+     document.querySelector("#results").innerHTML = "Player 1 wins";
+    } 
+   else if (store2 > store1) {
+     document.querySelector("#results").innerHTML = "Player 2 wins";
+    } else if (store1 === store2){ document.querySelector("#results").innerHTML = "No one wins";
+   }
 }
 function endTurn() {
-    if (((board[0] + board[1] + board[2] + board[3] + board[4] + board[5]) !== 0) && ((board[6] + board[7] + board[8] + board[9] + board[10] + board[11]) !== 0)) {
-    turn++;
-    } 
-    else winnerIsWho();  
-} 
+	let side1 = board[0] + board[1] + board[2] + board[3] + board[4] + board[5];
+	let side2 = board[6] + board[7] + board[8] + board[9] + board[10] + board[11];
+ if ((side1 !== 0) && (side2 !== 0)) {
+  turn++;
+ } else winnerIsWho();
+}
 function aroundTheBoard1() {
     board[6]++;
     board[7]++;
@@ -53,7 +54,7 @@ function aroundTheBoard1() {
     board[11]++;
 }
 function aroundTheBoard2(){
-    board[1]++;
+    board[0]++;
     board[1]++;
     board[2]++;
     board[3]++;
@@ -61,79 +62,91 @@ function aroundTheBoard2(){
     board[5]++;
 }
 function player1Options () {
-        pit1.addEventListener("click, a");
-        pit2.addEventListener("click, b");    
-        pit3.addEventListener("click, c");  
-        pit4.addEventListener("click, d");  
-        pit5.addEventListener("click, e");  
-        pit6.addEventListener("click, f");  
+        pit1.addEventListener("click", a);
+        pit2.addEventListener("click", b);    
+        pit3.addEventListener("click", c);  
+        pit4.addEventListener("click", d);  
+        pit5.addEventListener("click", e);  
+        pit6.addEventListener("click", f);  
 }    
 function player2Options () {
-        pit6.addEventListener("click, g");  
-        pit7.addEventListener("click, h");  
-        pit8.addEventListener("click, i");  
-        pit9.addEventListener("click, j");  
-        pit10.addEventListener("click, k");  
-        pit11.addEventListener("click, l");  
+        pit6.addEventListener("click", h);  
+        pit7.addEventListener("click", i);  
+        pit8.addEventListener("click", j);  
+        pit9.addEventListener("click", k);  
+        pit10.addEventListener("click", l);  
+        pit11.addEventListener("click", m);  
 }
 function pit1Capture(){
         if ((board[0] === 0) && (board[11] !== 0)) {
             store1 = 1 + store1 + board[11];
+            board[11] = 0;
         } else board[0]++;
 }
 function pit2Capture(){
         if ((board[1] === 0) && (board[10] !== 0)) {
             store1 = 1 + store1 + board[10];
+            board[10] = 0;
         } else board[1]++;
 }
 function pit3Capture(){
         if ((board[2] === 0) && (board[9] !== 0)) {
             store1 = 1 + store1 + board[9];
+            board[9] = 0;
         } else board[2]++;
 }
 function pit4Capture(){
         if ((board[3] === 0) && (board[8] !== 0)) {
             store1 = 1 + store1 + board[8];
+            board[8] = 0;
         } else board[3]++;
 }
 function pit5Capture(){
         if ((board[4] === 0) && (board[7] !== 0)) {
             store1 = 1 + store1 + board[7];
+            board[7] = 0;
         } else board[4]++;
 }
 function pit6Capture(){
         if ((board[5] === 0) && (board[6] !== 0)) {
             store1 = 1 + store1 + board[6];
+            board[6] = 0;
         } else board[5]++;
 }
 function pit7Capture(){
         if ((board[6] === 0) && (board[5] !== 0)) {
             store1 = 1 + store1 + board[5];
+            board[5] = 0;
         } else board[6]++;
 }
 function pit8Capture(){
         if ((board[7] === 0) && (board[4] !== 0)) {
             store1 = 1 + store1 + board[4];
-        } else board[7]++;
+            board[4] = 0;
+        } else board[4]++;
 }
 function pit9Capture(){
         if ((board[8] === 0) && (board[3] !== 0)) {
             store1 = 1 + store1 + board[3];
+            board[3] = 0;
         } else board[3]++;
 }
 function pit10Capture(){
         if ((board[9] === 0) && (board[2] !== 0)) {
             store1 = 1 + store1 + board[2];
+            board[2] = 0;
         } else board[9]++;
 }
 function pit11Capture(){
         if ((board[10] === 0) && (board[1] !== 0)) {
             store1 = 1 + store1 + board[1];
+            board[1] = 0;
         } else board[10]++;
 }
 function pit12Capture(){
         if ((board[11] === 0) && (board[0] !== 0)) {
             store1 = 1 + store1 + board[0];
+            board[0] = 0;
         } else board[11]++;
 }
 function visualBeanNumber() {
@@ -149,31 +162,39 @@ function visualBeanNumber() {
     document.querySelector("#pit10").innerHTML = board[9];
     document.querySelector("#pit11").innerHTML = board[10];
     document.querySelector("#pit12").innerHTML = board[11];
+    document.querySelector("#store1").innerHTML = store1;
+    document.querySelector("#store2").innerHTML = store2;	
 } 
 function a(){    
     switch (board[0]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
             pit2Capture();
+            break;
         case 2: 
             board[1]++;
             pit3Capture();
+            break;
         case 3: 
             board[1]++;
             board[2]++;
             pit4Capture();
+            break;
         case 4: 
             board[1]++;
             board[2]++;
             board[3]++;
             pit5Capture();
+            break;
         case 5: 
             board[1]++;
             board[2]++;
             board[3]++;
             board[4]++;
-            pit6Capture()++;
+            pit6Capture();
+            break;
         case 6: 
             board[1]++;
             board[2]++;
@@ -182,6 +203,7 @@ function a(){
             board[5]++;
             store1++;
             player1Options();
+            break;
         case 7: 
             board[1]++;
             board[2]++;
@@ -190,6 +212,7 @@ function a(){
             board[5]++;
             store1++;
             board[6]++;
+            break;
         case 8:
             board[1]++;
             board[2]++;
@@ -199,6 +222,7 @@ function a(){
             store1++;
             board[6]++;
             board[7]++;
+            break;
         case 9: 
             board[1]++;
             board[2]++;
@@ -209,6 +233,7 @@ function a(){
             board[6]++;
             board[7]++;
             board[8]++;
+            break;
         case 10: 
             board[1]++;
             board[2]++;
@@ -220,6 +245,7 @@ function a(){
             board[7]++;
             board[8]++;
             board[9]++;
+            break;
         case 11:
             board[1]++;
             board[2]++;
@@ -232,6 +258,7 @@ function a(){
             board[8]++;
             board[9]++;
             board[10]++;
+            break;
         case 12:
             board[1]++;
             board[2]++;
@@ -241,199 +268,235 @@ function a(){
             store1++;
             aroundTheBoard1();
     }
+    board[0] = 0;
+    visualBeanNumber();
 }
 function b() {
-switch (board[1]) {
-    case 0: 
-        alert("please select again, nothing here");
-    case 1: 
-        pit3Capture;
-    case 2:
-        board[2]++;
-        pit4Capture();
-    case 3:
-        board[2]++;
-        board[3]++;
-        pit5Capture();
-    case 4:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        pit6Capture();
-    case 5:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        player1Options();
-    case 6:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-    case 7:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-    case 8:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-    case 9:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    case 10:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    case 11:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-    case 12:
-        board[2]++;
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++
-        aroundTheBoard1();
-        pit1Capture();                
-}
+    switch (board[1]) {
+        case 0: 
+            alert("please select again, nothing here");
+            break;
+        case 1: 
+            pit3Capture();
+            break;
+        case 2:
+            board[2]++;
+            pit4Capture();
+            break;
+        case 3:
+            board[2]++;
+            board[3]++;
+            pit5Capture();
+            break;
+        case 4:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            pit6Capture();
+            break;
+        case 5:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            player1Options();
+            break;
+        case 6:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            break;
+        case 7:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            break;
+        case 8:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            break;
+        case 9:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            break;
+        case 10:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            break;
+        case 11:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            break;
+        case 12:
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            pit1Capture();                
+    }
+    board[1] = 0;
+    visualBeanNumber();
 }
 function c() {
-switch (board[2]) {
-    case 0: 
-        alert("please select again, nothing here");
-    case 1: 
-        pit4Capture;
-    case 2:
-        board[3]++;
-        pit5Capture();
-    case 3:
-        board[3]++;
-        board[4]++;
-        pit6Capture();
-    case 4:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-    case 5:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-    case 6:       
-        board[3]++;      
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;                                                      
-    case 7:
-        board[3]++;            
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-    case 8:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-    case 9:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        board[6]++;
-        board[7]++;
-        board[8]++;
-        board[9]++;
-        board[10]++;
-    case 10:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-    case 11:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++;
-        aroundTheBoard1();
-        pit1Capture();
-    case 12:
-        board[3]++;
-        board[4]++;
-        board[5]++;
-        store1++
-        aroundTheBoard1();
-        board[0]++;
-        pit2Capture();                
-}
+    switch (board[2]) {
+        case 0: 
+            alert("please select again, nothing here");
+            break;
+        case 1: 
+            pit4Capture();
+            break;
+        case 2:
+            board[3]++;
+            pit5Capture();
+            break;
+        case 3:
+            board[3]++;
+            board[4]++;
+            pit6Capture();
+            break;
+        case 4:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            break;
+        case 5:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            break;
+        case 6:       
+            board[3]++;      
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            break;                                                      
+        case 7:
+            board[3]++;            
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            break;
+        case 8:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            break;
+        case 9:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            board[6]++;
+            board[7]++;
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            break;
+        case 10:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            break;
+        case 11:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            pit1Capture();
+            break;
+        case 12:
+            board[3]++;
+            board[4]++;
+            board[5]++;
+            store1++;
+            aroundTheBoard1();
+            board[0]++;
+            pit2Capture();                
+    }
+    board[2] = 0;
+    visualBeanNumber();
 }
 function d() {
     switch (board[3]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
-            pit5Capture;
+            pit5Capture();
+            break;
         case 2:
             board[4]++;
             pit6Capture();
+            break;
         case 3:
             board[4]++;
             board[5]++;
             store1++;
+            break;
         case 4:
             board[4]++;
             board[5]++;
             store1++;
             board[6]++;
+            break;
         case 5:
             board[4]++;
             board[5]++;
             store1++;
             board[6]++;
             board[7]++;
+            break;
         case 6:             
             board[4]++;
             board[5]++;
@@ -441,6 +504,7 @@ function d() {
             board[6]++;
             board[7]++;
             board[8]++;
+            break;
         case 7:            
             board[4]++;
             board[5]++;
@@ -449,6 +513,7 @@ function d() {
             board[7]++;
             board[8]++;
             board[9]++;
+            break;
         case 8:
             board[4]++;
             board[5]++;
@@ -458,17 +523,20 @@ function d() {
             board[8]++;
             board[9]++;
             board[10]++;
+            break;
         case 9:
             board[4]++;
             board[5]++;
             store1++;
             aroundTheBoard1();
+            break;
         case 10:
             board[4]++;
             board[5]++;
             store1++;
             aroundTheBoard1();
             pit1Capture();
+            break;
         case 11:
             board[4]++;
             board[5]++;
@@ -476,40 +544,49 @@ function d() {
             aroundTheBoard1();
             board[0]++;
             pit2Capture();
+            break;
         case 12:
             board[4]++;
             board[5]++;
-            store1++
+            store1++;
             aroundTheBoard1();
             board[0]++;
             board[1]++;
             pit3Capture();                
     }
+    board[3] = 0;
+    visualBeanNumber();
 }
 function e() {
     switch (board[4]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
-            pit6Capture;
+            pit6Capture();
+            break;
         case 2:
             board[5]++;
             store1++;
+            break;
         case 3:
             board[5]++;
             store1++;
             board[6]++;
+            break;
         case 4:
             board[5]++;
             store1++;
             board[6]++;
             board[7]++;
+            break;
         case 5:
             board[5]++;
             store1++;
             board[6]++;
             board[7]++;
             board[8]++;
+            break;
         case 6:             
             board[5]++;
             store1++;
@@ -517,6 +594,7 @@ function e() {
             board[7]++;
             board[8]++;
             board[9]++;
+            break;
         case 7:                        
             board[5]++;
             store1++;
@@ -525,21 +603,25 @@ function e() {
             board[8]++;
             board[9]++;
             board[10]++;
+            break;
         case 8:
             board[5]++;
             store1++;
             aroundTheBoard1();
+            break;
         case 9:
             board[5]++;
             store1++;
             aroundTheBoard1();
             pit1Capture();
+            break;
         case 10:
             board[5]++;
             store1++;
             aroundTheBoard1();
             board[0]++;
             pit2Capture();
+            break;
         case 11:
             board[5]++;
             store1++;
@@ -547,40 +629,49 @@ function e() {
             board[0]++;
             board[1]++;
             pit3Capture();
+            break;
         case 12:
             board[5]++;
-            store1++
+            store1++;
             aroundTheBoard1();
             board[0]++;
             board[1]++;
             board[2]++;
             pit4Capture();                
     }
+    board[4] = 0;
+    visualBeanNumber();
 }
 function f() {
     switch (board[5]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
             store1++;
+            break;
         case 2:
             store1++;
             board[6]++;
+            break;
         case 3:
             store1++;
             board[6]++;
             board[7]++;
+            break;
         case 4:
             store1++;
             board[6]++;
             board[7]++;
             board[8]++;
+            break;
         case 5:
             store1++;
             board[6]++;
             board[7]++;
             board[8]++;
             board[9]++;
+            break;
         case 6:
             store1++;
             board[6]++;
@@ -588,24 +679,29 @@ function f() {
             board[8]++;
             board[9]++;             
             board[10]++;
+            break;
         case 7:
             store1++;
             aroundTheBoard1();
+            break;
         case 8:
             store1++;
             aroundTheBoard1();
             board[0]++;
+            break;
         case 9:
             store1++;
             aroundTheBoard1();
             board[0]++;
             pit2Capture();
+            break;
         case 10:
             store1++;
             aroundTheBoard1();
             board[0]++;
             board[1]++;
             pit3Capture();
+            break;
         case 11:
             store1++;
             aroundTheBoard1();
@@ -613,40 +709,49 @@ function f() {
             board[1]++;
             board[2]++;
             pit4Capture();
+            break;
         case 12:
-            store1++
+            store1++;
             aroundTheBoard1();
             board[0]++;
             board[1]++;
             board[2]++;
             board[3]++;
             pit5Capture();                
-}
+    }
+    board[5] = 0;
+    visualBeanNumber();
 }
 function h(){    
     switch (board[6]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
             pit8Capture();
+            break;        
         case 2: 
             board[7]++;
             pit9Capture();
+            break;
         case 3: 
             board[7]++;
             board[8]++;
             pit10Capture();
+            break;
         case 4: 
             board[7]++;
             board[8]++;
             board[9]++;
             pit11Capture();
+            break;
         case 5: 
             board[7]++;
             board[8]++;
             board[9]++;
             board[10]++;
-            pit12Capture()++;
+            pit12Capture();
+            break;
         case 6: 
             board[7]++;
             board[8]++;
@@ -655,6 +760,7 @@ function h(){
             board[11]++;
             store2++;
             player2Options();
+            break;
         case 7: 
             board[7]++;
             board[8]++;
@@ -663,6 +769,7 @@ function h(){
             board[11]++;
             store2++;
             board[0]++;
+            break;
         case 8:
             board[7]++;
             board[8]++;
@@ -672,6 +779,7 @@ function h(){
             store2++;
             board[0]++;
             board[1]++;
+            break;
         case 9: 
             board[7]++;
             board[8]++;
@@ -682,6 +790,7 @@ function h(){
             board[0]++;
             board[1]++;
             board[2]++;
+            break;
         case 10: 
             board[7]++;
             board[8]++;
@@ -693,6 +802,7 @@ function h(){
             board[1]++;
             board[2]++;
             board[3]++;
+            break;
         case 11:
             board[7]++;
             board[8]++;
@@ -705,6 +815,7 @@ function h(){
             board[2]++;
             board[3]++;
             board[4]++;
+            break;
         case 12:
             board[7]++;
             board[8]++;
@@ -714,25 +825,32 @@ function h(){
             store2++;
             aroundTheBoard2();
     }
+    board[6] = 0;
+    visualBeanNumber();
 }
 function i() {
     switch (board[7]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
-            pit9Capture;
+            pit9Capture();
+            break;
         case 2:
             board[8]++;
             pit10Capture();
+            break;
         case 3:
             board[8]++;
             board[9]++;
             pit11Capture();
+            break;
         case 4:
             board[8]++;
             board[9]++;
             board[10]++;
             pit12Capture();
+            break;
         case 5:
             board[8]++;
             board[9]++;
@@ -740,6 +858,7 @@ function i() {
             board[11]++;
             store2++;
             player2Options();
+            break;
         case 6:
             board[8]++;
             board[9]++;
@@ -747,6 +866,7 @@ function i() {
             board[11]++;
             store2++;
             board[0]++;
+            break;
         case 7:
             board[8]++;
             board[9]++;
@@ -755,6 +875,7 @@ function i() {
             store2++;
             board[0]++;
             board[1]++;
+            break;
         case 8:
             board[8]++;
             board[9]++;
@@ -764,6 +885,7 @@ function i() {
             board[0]++;
             board[1]++;
             board[3]++;
+            break;
         case 9:
             board[8]++;
             board[9]++;
@@ -774,6 +896,7 @@ function i() {
             board[1]++;
             board[2]++;
             board[3]++;
+            break;
         case 10:
             board[8]++;
             board[9]++;
@@ -785,6 +908,7 @@ function i() {
             board[2]++;
             board[3]++;
             board[4]++;
+            break;
         case 11:
             board[8]++;
             board[9]++;
@@ -792,6 +916,7 @@ function i() {
             board[11]++;
             store2++;
             aroundTheBoard2();
+            break;
         case 12:
             board[8]++;
             board[9]++;
@@ -800,115 +925,137 @@ function i() {
             store2++;
             aroundTheBoard2();
             pit7Capture();                
-}
+    }
+    board[7] = 0;
+    visualBeanNumber();
 }
 function j() {
     switch (board[8]) {
-    case 0: 
-        alert("please select again, nothing here");
-    case 1: 
-        pit10Capture;
-    case 2:
-        board[9]++;
-        pit11Capture();
-    case 3:
-        board[9]++;
-        board[10]++;
-        pit12Capture();
-    case 4:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        player2Options();
-    case 5:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        board[0]++;
-    case 6:       
-        board[9]++;      
-        board[10]++;
-        board[11]++;
-        store2++;
-        board[0]++;
-        board[1]++;                                                      
-    case 7:
-        board[9]++;            
-        board[10]++;
-        board[11]++;
-        store2++;
-        board[0]++;
-        board[1]++;
-        board[2]++;
-    case 8:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        board[0]++;
-        board[1]++;
-        board[2]++;
-        board[3]++;
-    case 9:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        board[0]++;
-        board[1]++;
-        board[2]++;
-        board[3]++;
-        board[4]++;
-    case 10:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        aroundTheBoard2();
-    case 11:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++;
-        aroundTheBoard2();
-        pit7Capture();
-    case 12:
-        board[9]++;
-        board[10]++;
-        board[11]++;
-        store2++
-        aroundTheBoard2();
-        board[6]++;
-        pit8Capture();                
+        case 0: 
+            alert("please select again, nothing here");
+            break;
+        case 1: 
+            pit10Capture();
+            break;
+        case 2:
+            board[9]++;
+            pit11Capture();
+            break;
+        case 3:
+            board[9]++;
+            board[10]++;
+            pit12Capture();
+            break;
+        case 4:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            player2Options();
+            break;
+        case 5:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            break;
+        case 6:       
+            board[9]++;      
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            break;
+        case 7:
+            board[9]++;            
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            break;
+        case 8:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+            break;
+        case 9:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+            board[4]++;
+            break;
+        case 10:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            break;
+        case 11:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            pit7Capture();
+            break;
+        case 12:
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+            board[6]++;
+            pit8Capture();                
     }
+    board[8] = 0;
+    visualBeanNumber();
 }
 function k() {
     switch (board[9]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
-            pit11Capture;
+            pit11Capture();
+            break;
         case 2:
             board[10]++;
             pit12Capture();
+            break;
         case 3:
             board[10]++;
             board[11]++;
             store2++;
             player2Options();
+            break;
         case 4:
             board[10]++;
             board[11]++;
             store2++;
             board[0]++;
+            break;
         case 5:
             board[10]++;
             board[11]++;
             store2++;
             board[0]++;
             board[1]++;
+            break;
         case 6:             
             board[10]++;
             board[11]++;
@@ -916,6 +1063,7 @@ function k() {
             board[0]++;
             board[1]++;
             board[2]++;
+            break;
         case 7:            
             board[10]++;
             board[11]++;
@@ -924,6 +1072,7 @@ function k() {
             board[1]++;
             board[2]++;
             board[3]++;
+            break;
         case 8:
             board[10]++;
             board[11]++;
@@ -933,17 +1082,20 @@ function k() {
             board[2]++;
             board[3]++;
             board[4]++;
+            break;
         case 9:
             board[10]++;
             board[11]++;
             store2++;
             aroundTheBoard2();
+            break;
         case 10:
             board[10]++;
             board[11]++;
             store2++;
             aroundTheBoard2();
             pit7Capture();
+            break;
         case 11:
             board[10]++;
             board[11]++;
@@ -951,42 +1103,50 @@ function k() {
             aroundTheBoard2();
             board[6]++;
             pit8Capture();
+            break;
         case 12:
             board[10]++;
             board[11]++;
-            store2++
+            store2++;
             aroundTheBoard2();
             board[6]++;
             board[7]++;
             pit9Capture();                
-
     }
+    board[9] = 0;
+    visualBeanNumber();
 }
 function l() {
     switch (board[10]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
-            pit12Capture;
+            pit12Capture();
+            break;
         case 2:
             board[11]++;
             store2++;
             player2Options();
+            break;
         case 3:
             board[11]++;
             store2++;
             board[0]++;
+            break;
         case 4:
             board[11]++;
             store2++;
             board[0]++;
             board[1]++;
+            break;
         case 5:
             board[11]++;
             store2++;
             board[0]++;
             board[1]++;
             board[2]++;
+            break;
         case 6:             
             board[11]++;
             store2++;
@@ -994,6 +1154,7 @@ function l() {
             board[1]++;
             board[2]++;
             board[3]++;
+            break;
         case 7:                        
             board[11]++;
             store2++;
@@ -1002,21 +1163,25 @@ function l() {
             board[2]++;
             board[3]++;
             board[4]++;
+            break;
         case 8:
             board[11]++;
             store2++;
             aroundTheBoard2();
+            break;
         case 9:
             board[11]++;
             store2++;
             aroundTheBoard2();
             pit7Capture();
+            break;
         case 10:
             board[11]++;
             store2++;
             aroundTheBoard2();
             board[6]++;
             pit8Capture();
+            break;
         case 11:
             board[11]++;
             store2++;
@@ -1024,40 +1189,49 @@ function l() {
             board[6]++;
             board[7]++;
             pit9Capture();
+            break;
         case 12:
             board[11]++;
-            store2++
+            store2++;
             aroundTheBoard2();
             board[6]++;
             board[7]++;
             board[8]++;
             pit10Capture();                
     }
+    board[10] = 0;
+    visualBeanNumber();
 }
 function m() {
     switch (board[11]) {
         case 0: 
             alert("please select again, nothing here");
+            break;
         case 1: 
             store2++;
+            break;
         case 2:
             store2++;
             board[0]++;
+            break;
         case 3:
             store2++;
             board[0]++;
             board[1]++;
+            break;
         case 4:
             store2++;
             board[0]++;
             board[1]++;
             board[2]++;
+            break;
         case 5:
             store2++;
             board[0]++;
             board[1]++;
             board[2]++;
             board[3]++;
+            break;
         case 6:
             store2++;
             board[0]++;
@@ -1065,24 +1239,29 @@ function m() {
             board[2]++;
             board[3]++;             
             board[4]++;
+            break;
         case 7:
             store2++;
             aroundTheBoard2();
+            break;
         case 8:
             store2++;
             aroundTheBoard2();
-            pit7Capture;
+            pit7Capture();
+            break;
         case 9:
             store2++;
             aroundTheBoard2();
             board[6]++;
             pit8Capture();
+            break;
         case 10:
             store2++;
             aroundTheBoard2();
             board[6]++;
             board[7]++;
             pit9Capture();
+            break;
         case 11:
             store2++;
             aroundTheBoard2();
@@ -1090,23 +1269,27 @@ function m() {
             board[7]++;
             board[8]++;
             pit10Capture();
+            break;
         case 12:
-            store2++
+            store2++;
             aroundTheBoard2();
             board[6]++;
             board[7]++;
             board[8]++;
             board[9]++;
             pit11Capture();                
-}
-}
-function game () {
-    if ((turn % 2) !== 0){
-        player1Options();
-    } 
-    else player2Options(); 
+    }
+    board[11] = 0;
     visualBeanNumber();
-    endTurn();    
-}  
-game();        
+}
+
+function game() {
+    visualBeanNumber();
+    if ((turn % 2) !== 0){
+     player1Options();
+    } 
+    else player2Options();
+    visualBeanNumber();
+    endTurn();
+   }             
 document.querySelector("#replay").addEventListener("click", play);        

@@ -5,7 +5,7 @@ The name mancala actually references a family of two player turn based strategy 
 
 I chose to make this game because it is a favorite game of my wife and I.
 
-![Mancala Wireframe](desktop/generalassembly/code/favoriteofwife/mancala/mancalawireframe.jpg)
+![Mancala Wireframe](https://github.com/QuarterT/Mancala/blob/gh-pages/mancala%20wireframe.jpg)
 
 Lanuages used: HTML, CSS, JS 
 
