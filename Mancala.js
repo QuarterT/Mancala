@@ -1281,14 +1281,20 @@ function m() {
     board[11] = 0;
     visualBeanNumber();
 }
-
-function game() {
-    visualBeanNumber();
-    if ((turn % 2) !== 0){
-     player1Options();
-    } 
-    else player2Options();
-    visualBeanNumber();
-    endTurn();
-   }             
+visualBeanNumber();
+pit1.addEventListener("click", a);
+pit2.addEventListener("click", b);    
+pit3.addEventListener("click", c);  
+pit4.addEventListener("click", d);  
+pit5.addEventListener("click", e);  
+pit6.addEventListener("click", f);  
+pit6.addEventListener("click", h);  
+pit7.addEventListener("click", i);  
+pit8.addEventListener("click", j);  
+pit9.addEventListener("click", k);  
+pit10.addEventListener("click", l);  
+pit11.addEventListener("click", m);
+endTurn();
+visualBeanNumber();
+          
 document.querySelector("#replay").addEventListener("click", play);        
