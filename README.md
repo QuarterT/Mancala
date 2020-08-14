@@ -5,6 +5,8 @@ The name mancala actually references a family of two player turn based strategy 
 
 I chose to make this game because it is a favorite game of my wife and I.
 
+![Mancala Wireframe](desktop/generalassembly/code/favoriteofwife/mancala/mancalawireframe.jpg)
+
 Lanuages used: HTML, CSS, JS 
 
 Getting started - 
@@ -19,9 +21,6 @@ if you run out of beans on your side, the game ends.
 Css - make the store images be able to have the number of beans in the center, maybe even be able to add tiny bean images that stack up on each other. or switch images as the numbers change. Would like to make the pits have similar images. Want to add an actual board image. 
 HTML - add more info, add a table to have a list of times player 1 or player 2 won. 
 JS - would like to build an AI player and have it be able to go first or second. write much DRYer code. 
-
-Copied requirements for reference
-
 
 ☐ Screenshot(s): Images of your actual game.
 
