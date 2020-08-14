@@ -716,7 +716,175 @@ function h(){
             aroundTheBoard2();
     }
 }
-
+function i() {
+    switch (board[7]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit9Capture;
+        case 2:
+            board[8]++;
+            pit10Capture();
+        case 3:
+            board[8]++;
+            board[9]++;
+            pit11Capture();
+        case 4:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            pit12Capture();
+        case 5:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            player2Options();
+        case 6:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+        case 7:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+        case 8:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[3]++;
+        case 9:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+        case 10:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            board[0]++;
+            board[1]++;
+            board[2]++;
+            board[3]++;
+            board[4]++;
+        case 11:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++;
+            aroundTheBoard2();
+        case 12:
+            board[8]++;
+            board[9]++;
+            board[10]++;
+            board[11]++;
+            store2++
+            aroundTheBoard2();
+            pit7Capture();                
+}
+}
+function j() {
+    switch (board[8]) {
+        case 0: 
+            alert("please select again, nothing here");
+        case 1: 
+            pit10Capture;
+    case 2:
+        board[9]++;
+        pit11Capture();
+    case 3:
+        board[9]++;
+        board[10]++;
+        pit12Capture();
+    case 4:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++;
+        player2Options();
+    case 5:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++;
+        board[0]++;
+    case 6:       
+        board[9]++;      
+        board[10]++;
+        board[11]++;
+        store2++;
+        board[0]++;
+        board[1]++;                                                      
+    case 7:
+        board[9]++;            
+        board[10]++;
+        board[11]++;
+        store2++;
+        board[0]++;
+        board[1]++;
+        board[2]++;
+    case 8:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++;
+        board[0]++;
+        board[1]++;
+        board[2]++;
+        board[3]++;
+    case 9:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++;
+        board[0]++;
+        board[1]++;
+        board[2]++;
+        board[3]++;
+        board[4]++;
+    case 10:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++;
+        aroundTheBoard2();
+    case 11:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store1++;
+        aroundTheBoard2();
+        pit1Capture();
+    case 12:
+        board[9]++;
+        board[10]++;
+        board[11]++;
+        store2++
+        aroundTheBoard2();
+        board[0]++;
+        pit2Capture();                
+    }
+}
 function game () {
     if ((turn % 2) !== 0){
         player1Options();
