@@ -759,7 +759,6 @@ function h(){
             board[10]++;
             board[11]++;
             store2++;
-            player2Options();
             break;
         case 7: 
             board[7]++;
