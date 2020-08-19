@@ -1,10 +1,12 @@
-/* P = player, p# = pit number
-p1P1 = board[0]; p2P12 = board[11]
-p1p2 = board[1]; p2P11 = board[10]
-p1P3 = board[2]; p2P10 = board[9];
-p1P4 = board[3]; p2P9 = board[8];
-p1P5 = board[4]; p2P8 = board[7];
-p1P6 = board[5]; p2P7 = board[6];
+/* visualization of the board
+            store2
+pit1 = board[0]; pit12 = board[11]
+pit2 = board[1]; pit11 = board[10]
+pit3 = board[2]; pit10 = board[9];
+pit4 = board[3]; pit9 = board[8];
+pit5 = board[4]; pit8 = board[7];
+pit6 = board[5]; pit7 = board[6];
+            store1
 */
 let turn = 1;
 let store1 = 0;
@@ -165,7 +167,7 @@ function visualBeanNumber() {
     document.querySelector("#store1").innerHTML = store1;
     document.querySelector("#store2").innerHTML = store2;	
 } 
-function a(){    
+function pit1Potentials(){    
     switch (board[0]) {
         case 0: 
             alert("please select again, nothing here");
@@ -271,7 +273,7 @@ function a(){
     board[0] = 0;
     visualBeanNumber();
 }
-function b() {
+function pit2Potentials() {
     switch (board[1]) {
         case 0: 
             alert("please select again, nothing here");
@@ -372,7 +374,7 @@ function b() {
     board[1] = 0;
     visualBeanNumber();
 }
-function c() {
+function pit3Potentials() {
     switch (board[2]) {
         case 0: 
             alert("please select again, nothing here");
@@ -467,7 +469,7 @@ function c() {
     board[2] = 0;
     visualBeanNumber();
 }
-function d() {
+function pit4Potentials() {
     switch (board[3]) {
         case 0: 
             alert("please select again, nothing here");
@@ -557,7 +559,7 @@ function d() {
     board[3] = 0;
     visualBeanNumber();
 }
-function e() {
+function pit5Potentials() {
     switch (board[4]) {
         case 0: 
             alert("please select again, nothing here");
@@ -642,7 +644,7 @@ function e() {
     board[4] = 0;
     visualBeanNumber();
 }
-function f() {
+function pit6Potentials() {
     switch (board[5]) {
         case 0: 
             alert("please select again, nothing here");
@@ -722,7 +724,7 @@ function f() {
     board[5] = 0;
     visualBeanNumber();
 }
-function h(){    
+function pit7Potentials(){    
     switch (board[6]) {
         case 0: 
             alert("please select again, nothing here");
@@ -827,7 +829,7 @@ function h(){
     board[6] = 0;
     visualBeanNumber();
 }
-function i() {
+function pit8Potentials() {
     switch (board[7]) {
         case 0: 
             alert("please select again, nothing here");
@@ -928,7 +930,7 @@ function i() {
     board[7] = 0;
     visualBeanNumber();
 }
-function j() {
+function pit9Potentials() {
     switch (board[8]) {
         case 0: 
             alert("please select again, nothing here");
@@ -1024,7 +1026,7 @@ function j() {
     board[8] = 0;
     visualBeanNumber();
 }
-function k() {
+function pit10Potentials() {
     switch (board[9]) {
         case 0: 
             alert("please select again, nothing here");
@@ -1115,7 +1117,7 @@ function k() {
     board[9] = 0;
     visualBeanNumber();
 }
-function l() {
+function pit11Potentials() {
     switch (board[10]) {
         case 0: 
             alert("please select again, nothing here");
@@ -1201,7 +1203,7 @@ function l() {
     board[10] = 0;
     visualBeanNumber();
 }
-function m() {
+function pit12Potentials() {
     switch (board[11]) {
         case 0: 
             alert("please select again, nothing here");
@@ -1282,18 +1284,18 @@ function m() {
     visualBeanNumber();
 }
 visualBeanNumber();
-pit1.addEventListener("click", a);
-pit2.addEventListener("click", b);    
-pit3.addEventListener("click", c);  
-pit4.addEventListener("click", d);  
-pit5.addEventListener("click", e);  
-pit6.addEventListener("click", f);  
-pit6.addEventListener("click", h);  
-pit7.addEventListener("click", i);  
-pit8.addEventListener("click", j);  
-pit9.addEventListener("click", k);  
-pit10.addEventListener("click", l);  
-pit11.addEventListener("click", m);
+pit1.addEventListener("click", pit1Potentials);
+pit2.addEventListener("click", pit2Potentials);    
+pit3.addEventListener("click", pit3Potentials);  
+pit4.addEventListener("click", pit4Potentials);  
+pit5.addEventListener("click", pit5Potentials);  
+pit6.addEventListener("click", pit6Potentials);    
+pit7.addEventListener("click", pit7Potentials);  
+pit8.addEventListener("click", pit8Potentials);  
+pit9.addEventListener("click", pit9Potentials);  
+pit10.addEventListener("click", pit10Potentials);  
+pit11.addEventListener("click", pit11Potentials);
+pit12.addEventListener("click", pit12Potentials);
 endTurn();
 visualBeanNumber();
           
