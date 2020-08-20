@@ -1282,18 +1282,18 @@ function listen4Player2 () {
     pit12.addEventListener("click", pit12Potentials);   
 }
 function turnControl() {
-    if ((winner === false) && ((turn % 2) !== 0)) {
-        listen4Player1;
-        endTurn;
+    if (winner === false && turn % 2 !== 0) {
+     listen4Player1();
+    } else if (winner === false && turn % 2 === 0) {
+     listen4Player2();
     }
-    else ((winner === false) && ((turn % 2) === 0)) {
-        listen4Player2;
-        endTurn;
-    }
-}
+   }
 function playNow() {
     visualBeanNumber();
-    turnControl();
+    while (winner !== true) {
+        turnControl();
+        endTurn();
+    }
 }
 
 document.querySelector("#playNow").addEventListener("click", playNow);          
