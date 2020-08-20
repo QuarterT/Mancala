@@ -9,6 +9,7 @@ pit6 = board[5]; pit7 = board[6];
             store1
 */
 let turn = 1;
+let winner = false
 let store1 = 0;
 let store2 = 0;
 let board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
@@ -24,12 +25,14 @@ let pit9 = document.querySelector("#pit9");
 let pit10 = document.querySelector("#pit10");
 let pit11 = document.querySelector("#pit11");
 let pit12 = document.querySelector("#pit12");
-
+let side1 = board[0] + board[1] + board[2] + board[3] + board[4] + board[5];
+let side2 = board[6] + board[7] + board[8] + board[9] + board[10] + board[11];
 function play() {
     turn = 1;
     store1 = 0;
     store2 = 0;
     board = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4];
+    document.querySelector("#pits").style.display = "block";
 }
 function winnerIsWho() {
     if (store1 > store2) {
@@ -37,12 +40,13 @@ function winnerIsWho() {
     } 
    else if (store2 > store1) {
      document.querySelector("#results").innerHTML = "Player 2 wins";
+
     } else if (store1 === store2){ document.querySelector("#results").innerHTML = "No one wins";
    }
+   winner = true;
+   document.querySelector("#pits").style.display = "none";
 }
-function endTurn() {
-	let side1 = board[0] + board[1] + board[2] + board[3] + board[4] + board[5];
-	let side2 = board[6] + board[7] + board[8] + board[9] + board[10] + board[11];
+function endTurn() {	
  if ((side1 !== 0) && (side2 !== 0)) {
   turn++;
  } else winnerIsWho();
@@ -62,22 +66,6 @@ function aroundTheBoard2(){
     board[3]++;
     board[4]++;
     board[5]++;
-}
-function player1Options () {
-        pit1.addEventListener("click", a);
-        pit2.addEventListener("click", b);    
-        pit3.addEventListener("click", c);  
-        pit4.addEventListener("click", d);  
-        pit5.addEventListener("click", e);  
-        pit6.addEventListener("click", f);  
-}    
-function player2Options () {
-        pit6.addEventListener("click", h);  
-        pit7.addEventListener("click", i);  
-        pit8.addEventListener("click", j);  
-        pit9.addEventListener("click", k);  
-        pit10.addEventListener("click", l);  
-        pit11.addEventListener("click", m);  
 }
 function pit1Capture(){
         if ((board[0] === 0) && (board[11] !== 0)) {
@@ -204,7 +192,6 @@ function pit1Potentials(){
             board[4]++;
             board[5]++;
             store1++;
-            player1Options();
             break;
         case 7: 
             board[1]++;
@@ -302,7 +289,6 @@ function pit2Potentials() {
             board[4]++;
             board[5]++;
             store1++;
-            player1Options();
             break;
         case 6:
             board[2]++;
@@ -858,7 +844,6 @@ function pit8Potentials() {
             board[10]++;
             board[11]++;
             store2++;
-            player2Options();
             break;
         case 6:
             board[8]++;
@@ -952,7 +937,6 @@ function pit9Potentials() {
             board[10]++;
             board[11]++;
             store2++;
-            player2Options();
             break;
         case 5:
             board[9]++;
@@ -1042,7 +1026,6 @@ function pit10Potentials() {
             board[10]++;
             board[11]++;
             store2++;
-            player2Options();
             break;
         case 4:
             board[10]++;
@@ -1128,7 +1111,6 @@ function pit11Potentials() {
         case 2:
             board[11]++;
             store2++;
-            player2Options();
             break;
         case 3:
             board[11]++;
@@ -1283,20 +1265,36 @@ function pit12Potentials() {
     board[11] = 0;
     visualBeanNumber();
 }
-visualBeanNumber();
-pit1.addEventListener("click", pit1Potentials);
-pit2.addEventListener("click", pit2Potentials);    
-pit3.addEventListener("click", pit3Potentials);  
-pit4.addEventListener("click", pit4Potentials);  
-pit5.addEventListener("click", pit5Potentials);  
-pit6.addEventListener("click", pit6Potentials);    
-pit7.addEventListener("click", pit7Potentials);  
-pit8.addEventListener("click", pit8Potentials);  
-pit9.addEventListener("click", pit9Potentials);  
-pit10.addEventListener("click", pit10Potentials);  
-pit11.addEventListener("click", pit11Potentials);
-pit12.addEventListener("click", pit12Potentials);
-endTurn();
-visualBeanNumber();
-          
+function listen4Player1 () {
+    pit1.addEventListener("click", pit1Potentials);
+    pit2.addEventListener("click", pit2Potentials);    
+    pit3.addEventListener("click", pit3Potentials);  
+    pit4.addEventListener("click", pit4Potentials);  
+    pit5.addEventListener("click", pit5Potentials);  
+    pit6.addEventListener("click", pit6Potentials);   
+}
+function listen4Player2 () {
+    pit7.addEventListener("click", pit7Potentials);  
+    pit8.addEventListener("click", pit8Potentials);  
+    pit9.addEventListener("click", pit9Potentials);  
+    pit10.addEventListener("click", pit10Potentials);  
+    pit11.addEventListener("click", pit11Potentials);
+    pit12.addEventListener("click", pit12Potentials);   
+}
+function turnControl() {
+    if ((winner === false) && ((turn % 2) !== 0)) {
+        listen4Player1;
+        endTurn;
+    }
+    else ((winner === false) && ((turn % 2) === 0)) {
+        listen4Player2;
+        endTurn;
+    }
+}
+function playNow() {
+    visualBeanNumber();
+    turnControl();
+}
+
+document.querySelector("#playNow").addEventListener("click", playNow);          
 document.querySelector("#replay").addEventListener("click", play);        
