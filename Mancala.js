@@ -1282,12 +1282,8 @@ function listen4Player2 () {
     pit12.addEventListener("click", pit12Potentials);   
 }
 function turnControl() {
-    if (winner === false && turn % 2 !== 0) {
-     listen4Player1();
-    } else if (winner === false && turn % 2 === 0) {
-     listen4Player2();
-    }
-   }
+    turn % 2 ? listen4Player1() : listen4Player2();
+  }
 function playNow() {
     visualBeanNumber();
     while (winner !== true) {
