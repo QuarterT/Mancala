@@ -1281,19 +1281,11 @@ function listen4Player2 () {
     pit11.addEventListener("click", pit11Potentials);
     pit12.addEventListener("click", pit12Potentials);   
 }
-function turnControl() {
-    if (winner === false && turn % 2 !== 0) {
-     listen4Player1();
-    } else if (winner === false && turn % 2 === 0) {
-     listen4Player2();
-    }
-   }
 function playNow() {
     visualBeanNumber();
-    while (winner !== true) {
-        turnControl();
-        endTurn();
-    }
+    listen4Player1 ();
+    listen4Player2();
+    endTurn();
 }
 
 document.querySelector("#playNow").addEventListener("click", playNow);          
